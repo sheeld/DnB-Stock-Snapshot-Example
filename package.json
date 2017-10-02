@@ -1,0 +1,33 @@
+{
+  "name": "DnB-Stock-Sapshot Example",
+  "version": "0.0.0",
+  "description": "This example showcases how to leverage Alpha Vantage Market API & Highstock.js to create a dynamic market snapshot generator",
+  "main": "server.js",
+  "repository": "",
+  "author": "Sheel <sheel.world>",
+  "dependencies": {
+    "async": "^2.3.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.1",
+    "busboy": "^0.2.14",
+    "busboy-body-parser": "^0.3.0",
+    "connect-mongo": "^1.3.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.2",
+    "fs": "0.0.1-security",
+    "gridfs-stream": "^1.1.1",
+    "hbs": "^4.0.1",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.9.4",
+    "mongoose-deep-populate": "^3.0.0",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport.socketio": "^3.7.0",
+    "request": "^2.83.0",
+    "socket.io": "^1.7.3"
+  }
+}

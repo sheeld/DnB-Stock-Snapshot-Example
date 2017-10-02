@@ -1,0 +1,77 @@
+{{!--HTML--}}
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-7">
+      <div id="code"></div>
+      <div class="overview">
+        <input type="hidden" value="{{ snapshot._id }}" id="snapshot_id" />
+        <div class="template-card">
+          <div class="name">
+            <h1 class="h1-size">{{snapshot.ticker}}</h1>
+            <hr />
+            <img class="image-test" src="{{snapshot.picture}}" />
+          </div>
+        </div>
+      </div>
+
+      <div class="overview">
+        <div class="about-card">
+          <div class="name">
+            <h3 class="h3-size">{{snapshot.created}}</h3>
+            <hr />
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-2" style="margin: 78px; text-align: center;">
+      <div class="overview">
+        <div class="order-card">
+          <div class="name">
+            <a href="/save/{{ snapshot._id }}" class="btn btn-success btn-lg">Save Snapshot</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{!--FULL WIDTH CHART & DATA--}}
+
+<div id="container"></div>
+<pre id="data.csv">{{snapshot.data}}</pre>
+
+{{!--JAVASCRIPT--}}
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+
+    $('#container').highcharts('StockChart', {
+      xAxis: {
+        type: 'datetime'
+      },
+      title: {
+        text: '{{snapshot.ticker}} Stock Price'
+      },
+      data: {
+        csv: document.getElementById('data.csv').innerHTML
+      },
+      rangeSelector: {
+        enabled: false
+      },
+      navigator: {
+        enabled: false
+      },
+      credits: {
+        enabled: false
+      }
+    });
+  });
+</script>

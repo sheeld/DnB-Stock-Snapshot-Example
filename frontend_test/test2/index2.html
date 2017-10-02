@@ -1,0 +1,30 @@
+<body>
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.highcharts.com/stock/highstock.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <div id="container"></div>
+</body>
+
+<pre id="data.csv">Date,Value
+01-05-2014,155
+02-06-2014,156
+03-11-2014,157</pre>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+    
+        $('#container').highcharts('StockChart', {
+            xAxis: {
+                type: 'datetime'
+            },
+            title: {
+                text: 'Index'
+            },
+            data: {
+                csv: document.getElementById('data.csv').innerHTML
+            }
+            
+        });
+
+});
+</script>

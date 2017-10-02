@@ -1,0 +1,41 @@
+{{!--HTML--}}
+
+<div class="hero">
+	<div class="container" style="margin-top: 75px; margin-bottom: 50px;">
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<form method="post" action="/add-new-snapshot">
+					<div class="input-group input-group-lg">
+						<input type="text" class="form-control" name="snapshot_ticker" placeholder="Enter stock symbol...">
+						<span class="input-group-btn">
+							<input type="submit" class="btn btn-success" value="Get Stock Info">
+						</span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container section">
+	<h1>
+		{{user.name}}'s snapshots
+	</h1>
+	{{#each snapshots}}
+		<div class="col-md-3">
+			<div class="">
+				<a href="/snapshot/{{ _id }}">
+					<h3>
+						{{ ticker }}
+					</h3>
+					<h4>
+						{{ created }}
+					</h4>
+				</a>
+			</div>
+			<div>
+				<a href="/delete/{{ _id }}">remove<a/>
+			</div>
+		</div>
+	{{/each}}
+
+</div>
