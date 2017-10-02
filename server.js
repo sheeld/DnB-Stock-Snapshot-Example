@@ -1,6 +1,4 @@
-//
-//import modules
-//
+// IMPORT MODULES
 
 const express = require('express');
 const morgan = require('morgan');
@@ -22,9 +20,7 @@ const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-//
 //Session implementation
-//
 
 const sessionMiddleware = session({
   resave: true,
@@ -38,9 +34,7 @@ mongoose.connect(config.database, function(err) {
   console.log("Connected to the database");
 });
 
-//
 //Express implementation
-//
 
 app.engine('.hbs', expressHbs({ defaultLayout: 'layout', extname: '.hbs' }));
 app.set('view engine', 'hbs');
@@ -57,9 +51,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-//
 //Socket.io implementation
-//
 
 io.use(passportSocketIo.authorize({
   cookieParser: cookieParser,
@@ -85,9 +77,7 @@ function onAuthorizeFail(data, message, error, accept){
     accept(new Error(message));
 }
 
-//
 //Routeing
-//
 
 const mainRoutes = require('./routes/main');
 const userRoutes = require('./routes/user');
