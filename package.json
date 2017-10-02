@@ -1,9 +1,9 @@
 {
-  "name": "DnB-Stock-Sapshot Example",
+  "name": "DnB-Stock-Snapshot Example",
   "version": "0.0.0",
   "description": "This example showcases how to leverage Alpha Vantage Market API & Highstock.js to create a dynamic market snapshot generator",
   "main": "server.js",
-  "repository": "",
+  "repository": "https://github.com/sheeld/DnB-Stock-Snapshot-Example.git",
   "author": "Sheel <sheel.world>",
   "dependencies": {
     "async": "^2.3.0",
