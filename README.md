@@ -19,7 +19,7 @@
                                    \/|__|   |__| 
 
 
-This example showcases how to leverage Alpha Vantage Market API & Highstock.js to create a dynamic market snapshot generator.
+## This example showcases how to leverage Alpha Vantage Market API & Highstock.js to create a dynamic market snapshot generator.
 
 1) Sign-up for a account.
 
